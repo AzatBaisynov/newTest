@@ -1,1 +1,1 @@
-web: java -jar target/SabiraBot2-1.0-SNAPSHOT.jar
+web: java -jar SabiraBot2-1.0-SNAPSHOT.jar
