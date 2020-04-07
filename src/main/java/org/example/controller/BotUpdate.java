@@ -20,12 +20,15 @@ public class BotUpdate {
                     }
                     break;
                 case "/kyrgyzstan" :
-                    bot.sendMsg(message, "Статистика по кыргызстану:");
+                    bot.sendMsg(message, "Статистика по Кыргызстану:");
                     bot.sendMsg(message, HtmlReader.getKyrgyzOfficialTable().toString());
                     break;
                 case "/start" :
                     bot.sendMsg(message, "Здравствуйте");
                     break;
+                case "/russia" :
+                    bot.sendMsg(message, "Статистика по России:");
+                    bot.sendMsg(message, HtmlReader.getRussiaOfficialTable().toString());
                 default:
             }
             if (message.getText().contains("пидр")){

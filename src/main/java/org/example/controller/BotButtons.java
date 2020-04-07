@@ -21,6 +21,7 @@ public class BotButtons {
 
         keyboardFirstRow.add(new KeyboardButton("/top10"));
         keyboardFirstRow.add(new KeyboardButton("/kyrgyzstan"));
+        keyboardFirstRow.add(new KeyboardButton("/russia"));
 
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
