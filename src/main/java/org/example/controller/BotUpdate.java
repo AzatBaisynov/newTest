@@ -21,7 +21,7 @@ public class BotUpdate {
                     break;
                 case "/kyrgyzstan" :
                     bot.sendMsg(message, "Статистика по кыргызстану:");
-                    bot.sendMsg(message, HtmlReader.kyrgystanStat().toString());
+                    bot.sendMsg(message, HtmlReader.getKyrgyzOfficialTable().toString());
                     break;
                 case "/start" :
                     bot.sendMsg(message, "Здравствуйте");
