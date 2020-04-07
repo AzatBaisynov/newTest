@@ -18,12 +18,14 @@ public class BotButtons {
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
+        KeyboardRow keyboardSecondRow = new KeyboardRow();
 
         keyboardFirstRow.add(new KeyboardButton("/top10"));
         keyboardFirstRow.add(new KeyboardButton("/kyrgyzstan"));
-        keyboardFirstRow.add(new KeyboardButton("/russia"));
+        keyboardSecondRow.add(new KeyboardButton("/russia"));
 
         keyboardRowList.add(keyboardFirstRow);
+        keyboardRowList.add(keyboardSecondRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
     }
 }
