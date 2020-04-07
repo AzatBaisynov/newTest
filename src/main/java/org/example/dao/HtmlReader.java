@@ -18,13 +18,13 @@ public class HtmlReader {
             e.printStackTrace();
         }
 
-        int country = 0;
-        int totalCases = 1;
-        int newCases = 2;
-        int totalDeaths = 3;
-        int newDeaths = 4;
-        int totalRecovered = 5;
-        int activeCases = 6;
+        int country = 12;
+        int totalCases = 13;
+        int newCases = 14;
+        int totalDeaths = 15;
+        int newDeaths = 16;
+        int totalRecovered = 17;
+        int activeCases = 18;
 
         while (0 < 1) {
             articles.add(new Article(
@@ -35,13 +35,13 @@ public class HtmlReader {
                     checkForNull(doc.getElementsByTag("td").get(newDeaths).text()),
                     checkForNull(doc.getElementsByTag("td").get(totalRecovered).text()),
                     checkForNull(doc.getElementsByTag("td").get(activeCases).text())));
-            country += 10;
-            totalCases += 10;
-            newCases += 10;
-            totalDeaths += 10;
-            newDeaths += 10;
-            totalRecovered += 10;
-            activeCases += 10;
+            country += 12;
+            totalCases += 12;
+            newCases += 12;
+            totalDeaths += 12;
+            newDeaths += 12;
+            totalRecovered += 12;
+            activeCases += 12;
             if (doc.getElementsByTag("td").get(country).text().contains("Total:")){
                 break;
             }
