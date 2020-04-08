@@ -12,11 +12,23 @@ import static org.example.controller.BotButtons.setButtons;
 import static org.example.controller.BotUpdate.runUpdate;
 
 public class Bot extends TelegramLongPollingBot {
-    public void sendMsg(Message message, String text){
+
+    public void sendMsgNoReplyNoButton(Message message, String text){
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setReplyToMessageId(message.getMessageId());
+        sendMessage.setText(text);
+        try {
+            execute(sendMessage);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMsgNoReply(Message message, String text){
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.enableMarkdown(true);
+        sendMessage.setChatId(message.getChatId().toString());
         sendMessage.setText(text);
         try {
             setButtons(sendMessage);
@@ -25,6 +37,7 @@ public class Bot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 
     public void onUpdateReceived(Update update) {
         runUpdate(update);

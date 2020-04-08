@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SabiraBot2" />
         <module name="SabiraBot" />
+        <module name="SabiraBot2" />
+        <module name="Новая папка" />
       </profile>
     </annotationProcessing>
   </component>

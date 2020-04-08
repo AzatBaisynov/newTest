@@ -1,43 +1,50 @@
 package org.example.controller;
 
 import org.example.dao.HtmlReader;
+import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.example.repo.Article;
+import org.telegram.telegrambots.meta.api.objects.User;
+
 import java.util.List;
 
 public class BotUpdate {
     public static void runUpdate(Update update){
         Bot bot = new Bot();
-        Message message = update.getMessage();
-        if(message != null && message.hasText()){
-            switch (message.getText()) {
+        if(update.hasCallbackQuery()){
+
+            CallbackQuery callbackQuery = update.getCallbackQuery();
+            String data = callbackQuery.getData();
+            User user = callbackQuery.getFrom();
+            Message message1 = callbackQuery.getMessage();
+
+            switch (data) {
                 case "/top10" :
-                    bot.sendMsg(message, "вывожу статистику:");
+                    bot.sendMsgNoReplyNoButton(message1, "вывожу статистику:");
                     List<Article> list = HtmlReader.getOfficialTable();
                     for(int i = 0; i < 10; i++) {
-                        bot.sendMsg(message,list.get(i).toString());
+                        bot.sendMsgNoReplyNoButton(message1,list.get(i).toString());
                     }
+                    bot.sendMsgNoReply(message1, "\u2063                                Меню                 \u2063");
                     break;
                 case "/kyrgyzstan" :
-                    bot.sendMsg(message, "Статистика по Кыргызстану:");
-                    bot.sendMsg(message, HtmlReader.getKyrgyzOfficialTable().toString());
-                    break;
-                case "/start" :
-                    bot.sendMsg(message, "Здравствуйте");
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по Кыргызстану:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getKyrgyzOfficialTable().toString());
                     break;
                 case "/russia" :
-                    bot.sendMsg(message, "Статистика по России:");
-                    bot.sendMsg(message, HtmlReader.getRussiaOfficialTable().toString());
-                default:
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по России:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getRussiaOfficialTable().toString());
+                    break;
             }
-            if (message.getText().contains("пидр")){
-                bot.sendMsg(message, "Сам(а) ты пидр");
-            }
-            if (message.getText().contains("Пидр")){
-                bot.sendMsg(message, "Сам(а) ты пидр");
+        } else {
+            if (update.getMessage().getText().contains("Меню") ||
+                    update.getMessage().getText().contains("меню") ||
+                    update.getMessage().getText().contains("Menu") ||
+                    update.getMessage().getText().contains("menu") ||
+                    update.getMessage().getText().contains("/start")){
+                bot.sendMsgNoReply(update.getMessage(),"\u2063                                Меню                 \u2063");
             }
         }
-        System.out.println(message.getText());
     }
 }
