@@ -19,16 +19,17 @@ public class HtmlReader {
             e.printStackTrace();
         }
 
-        int country = 12;
-        int totalCases = 13;
-        int newCases = 14;
-        int totalDeaths = 15;
-        int newDeaths = 16;
-        int totalRecovered = 17;
-        int activeCases = 18;
+
+        int country = 104;
+        int totalCases = 105;
+        int newCases = 106;
+        int totalDeaths = 107;
+        int newDeaths = 108;
+        int totalRecovered = 109;
+        int activeCases = 110;
 
 
-        while (country <= 120) {
+        while (country <= 224) {
             articles.add(new Article(
                     doc.getElementsByTag("td").get(country).text(),
                     checkForNull(doc.getElementsByTag("td").get(totalCases).text()),
@@ -37,13 +38,13 @@ public class HtmlReader {
                     checkForNull(doc.getElementsByTag("td").get(newDeaths).text()),
                     checkForNull(doc.getElementsByTag("td").get(totalRecovered).text()),
                     checkForNull(doc.getElementsByTag("td").get(activeCases).text())));
-            country += 12;
-            totalCases += 12;
-            newCases += 12;
-            totalDeaths += 12;
-            newDeaths += 12;
-            totalRecovered += 12;
-            activeCases += 12;
+            country += 13;
+            totalCases += 13;
+            newCases += 13;
+            totalDeaths += 13;
+            newDeaths += 13;
+            totalRecovered += 13;
+            activeCases += 13;
 //            if (doc.getElementsByTag("td").get(country).text().contains("Total:")){
 //                break;
 //            }
@@ -56,13 +57,13 @@ public class HtmlReader {
 
 
     public static Article getKyrgyzOfficialTable() {
-        int country = 12;
-        int totalCases = 13;
-        int newCases = 14;
-        int totalDeaths = 15;
-        int newDeaths = 16;
-        int totalRecovered = 17;
-        int activeCases = 18;
+        int country = 104;
+        int totalCases = 105;
+        int newCases = 106;
+        int totalDeaths = 107;
+        int newDeaths = 108;
+        int totalRecovered = 109;
+        int activeCases = 110;
         List<Article> articles = new ArrayList<>();
         Document doc = null;
         try {
@@ -80,13 +81,13 @@ public class HtmlReader {
                     checkForNull(doc.getElementsByTag("td").get(newDeaths).text()),
                     checkForNull(doc.getElementsByTag("td").get(totalRecovered).text()),
                     checkForNull(doc.getElementsByTag("td").get(activeCases).text())));
-            country += 12;
-            totalCases += 12;
-            newCases += 12;
-            totalDeaths += 12;
-            newDeaths += 12;
-            totalRecovered += 12;
-            activeCases += 12;
+            country += 13;
+            totalCases += 13;
+            newCases += 13;
+            totalDeaths += 13;
+            newDeaths += 13;
+            totalRecovered += 13;
+            activeCases += 13;
             if (doc.getElementsByTag("td").get(country).text().contains("Total:")){
                 break;
             }
@@ -108,13 +109,13 @@ public class HtmlReader {
     }
 
     public static Article getRussiaOfficialTable() {
-        int country = 12;
-        int totalCases = 13;
-        int newCases = 14;
-        int totalDeaths = 15;
-        int newDeaths = 16;
-        int totalRecovered = 17;
-        int activeCases = 18;
+        int country = 104;
+        int totalCases = 105;
+        int newCases = 106;
+        int totalDeaths = 107;
+        int newDeaths = 108;
+        int totalRecovered = 109;
+        int activeCases = 110;
         List<Article> articles = new ArrayList<>();
         Document doc = null;
         try {
@@ -132,13 +133,13 @@ public class HtmlReader {
                     checkForNull(doc.getElementsByTag("td").get(newDeaths).text()),
                     checkForNull(doc.getElementsByTag("td").get(totalRecovered).text()),
                     checkForNull(doc.getElementsByTag("td").get(activeCases).text())));
-            country += 12;
-            totalCases += 12;
-            newCases += 12;
-            totalDeaths += 12;
-            newDeaths += 12;
-            totalRecovered += 12;
-            activeCases += 12;
+            country += 13;
+            totalCases += 13;
+            newCases += 13;
+            totalDeaths += 13;
+            newDeaths += 13;
+            totalRecovered += 13;
+            activeCases += 13;
             if (doc.getElementsByTag("td").get(country).text().contains("Total:")){
                 break;
             }
@@ -164,5 +165,14 @@ public class HtmlReader {
             return "0";
         }
         return str;
+    }
+    public static Document docMaker(){
+        Document doc = null;
+        try {
+            doc = Jsoup.connect("https://www.worldometers.info/coronavirus/").get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return doc;
     }
 }
