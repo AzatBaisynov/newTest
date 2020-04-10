@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.bl.FileWriterLogs;
 import org.example.dao.HtmlReader;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -8,6 +9,8 @@ import org.example.repo.Article;
 import org.telegram.telegrambots.meta.api.objects.User;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class BotUpdate {
@@ -18,8 +21,9 @@ public class BotUpdate {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String data = callbackQuery.getData();
             User user = callbackQuery.getFrom();
-            Message message1 = callbackQuery.getMessage();
+            FileWriterLogs.writeToLog(user.getId()+ " "+ data + " " + LocalDateTime.now().toString() + "\n");
 
+            Message message1 = callbackQuery.getMessage();
             switch (data) {
                 case "/top10" :
                     bot.sendMsgNoReplyNoButton(message1, "Вывожу статистику:");
