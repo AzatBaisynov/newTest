@@ -21,7 +21,7 @@ public class BotUpdate {
 
             switch (data) {
                 case "/top10" :
-                    bot.sendMsgNoReplyNoButton(message1, "вывожу статистику:");
+                    bot.sendMsgNoReplyNoButton(message1, "Вывожу статистику:");
                     List<Article> list = HtmlReader.getOfficialTable();
                     for(int i = 0; i < 10; i++) {
                         bot.sendMsgNoReplyNoButton(message1,list.get(i).toString());

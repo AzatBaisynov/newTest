@@ -9,9 +9,6 @@ public class Article {
     private String totalRecovered;
     private String activeCases;
 
-    public Article() {
-    }
-
     public Article(String country, String totalCases, String newCases, String totalDeaths, String newDeaths, String totalRecovered, String activeCases) {
         this.country = country;
         this.totalCases = totalCases;

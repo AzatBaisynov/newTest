@@ -9,9 +9,7 @@ import java.util.*;
 
 public class Changer {
     static List getOneCountryList(String country, String reg){
-        Document doc = null;
-        try { doc = Jsoup.connect("https://www.worldometers.info/coronavirus/").get(); }
-        catch (IOException e) { e.printStackTrace(); }
+        Document doc = HtmlReader.docMaker();
 
         LinkedList<String> list = new LinkedList<>();
         LinkedHashSet<String> set = new LinkedHashSet<>();

@@ -17,27 +17,21 @@ public class BotButtons {
         InlineKeyboardButton topButton = new InlineKeyboardButton();
         topButton.setText("            Топ 10            ");
         topButton.setCallbackData("/top10");
-
         InlineKeyboardButton kyrButton = new InlineKeyboardButton();
         kyrButton.setText("       Кыргызстан        ");
         kyrButton.setCallbackData("/kyrgyzstan");
-
         InlineKeyboardButton russButton = new InlineKeyboardButton();
         russButton.setText("  Россия  ");
         russButton.setCallbackData("/russia");
-
         InlineKeyboardButton kazButton = new InlineKeyboardButton();
         kazButton.setText("  Казахстан  ");
         kazButton.setCallbackData("/kazakhstan");
-
         InlineKeyboardButton uzbButton = new InlineKeyboardButton();
         uzbButton.setText("  Узбекистан  ");
         uzbButton.setCallbackData("/uzbekistan");
-
         InlineKeyboardButton chiButton = new InlineKeyboardButton();
         chiButton.setText("  Китай  ");
         chiButton.setCallbackData("/china");
-
         InlineKeyboardButton turButton = new InlineKeyboardButton();
         turButton.setText("  Турция  ");
         turButton.setCallbackData("/turkey");
@@ -45,15 +39,12 @@ public class BotButtons {
         //row
         List<InlineKeyboardButton> row = new LinkedList<>();
         row.add(topButton);
-
         List<InlineKeyboardButton> row1 = new LinkedList<>();
         row1.add(kyrButton);
         row1.add(russButton);
-
         List<InlineKeyboardButton> row2 = new LinkedList<>();
         row2.add(kazButton);
         row2.add(uzbButton);
-
         List<InlineKeyboardButton> row3 = new LinkedList<>();
         row3.add(chiButton);
         row3.add(turButton);
