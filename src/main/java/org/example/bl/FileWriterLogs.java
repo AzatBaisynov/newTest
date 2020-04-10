@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class FileWriterLogs {
     public static void writeToLog(String str){
-        File myFile = new File("/logs/text.txt");
+        File myFile = new File("/sabiralogs/text.txt");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
             writer.write(str);
