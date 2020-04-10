@@ -30,11 +30,27 @@ public class BotUpdate {
                     break;
                 case "/kyrgyzstan" :
                     bot.sendMsgNoReplyNoButton(message1, "Статистика по Кыргызстану:");
-                    bot.sendMsgNoReply(message1, HtmlReader.getKyrgyzOfficialTable().toString());
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("Kyrgyzstan", "Asia").toString());
                     break;
                 case "/russia" :
                     bot.sendMsgNoReplyNoButton(message1, "Статистика по России:");
-                    bot.sendMsgNoReply(message1, HtmlReader.getRussiaOfficialTable().toString());
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("Russia", "Europe").toString());
+                    break;
+                case "/kazakhstan" :
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по Казахстану:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("Kazakhstan", "Asia").toString());
+                    break;
+                case "/uzbekistan" :
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по Узбекистану:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("Uzbekistan", "Asia").toString());
+                    break;
+                case "/china" :
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по Китаю:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("China", "Asia").toString());
+                    break;
+                case "/turkey" :
+                    bot.sendMsgNoReplyNoButton(message1, "Статистика по Турции:");
+                    bot.sendMsgNoReply(message1, HtmlReader.getCountryOfficialTable("Turkey", "Asia").toString());
                     break;
             }
         } else {

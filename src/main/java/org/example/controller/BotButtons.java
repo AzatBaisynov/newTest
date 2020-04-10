@@ -25,22 +25,47 @@ public class BotButtons {
         InlineKeyboardButton russButton = new InlineKeyboardButton();
         russButton.setText("  Россия  ");
         russButton.setCallbackData("/russia");
+
+        InlineKeyboardButton kazButton = new InlineKeyboardButton();
+        kazButton.setText("  Казахстан  ");
+        kazButton.setCallbackData("/kazakhstan");
+
+        InlineKeyboardButton uzbButton = new InlineKeyboardButton();
+        uzbButton.setText("  Узбекистан  ");
+        uzbButton.setCallbackData("/uzbekistan");
+
+        InlineKeyboardButton chiButton = new InlineKeyboardButton();
+        chiButton.setText("  Китай  ");
+        chiButton.setCallbackData("/china");
+
+        InlineKeyboardButton turButton = new InlineKeyboardButton();
+        turButton.setText("  Турция  ");
+        turButton.setCallbackData("/turkey");
         //
         //row
         List<InlineKeyboardButton> row = new LinkedList<>();
         row.add(topButton);
-        row.add(kyrButton);
 
         List<InlineKeyboardButton> row1 = new LinkedList<>();
+        row1.add(kyrButton);
         row1.add(russButton);
+
+        List<InlineKeyboardButton> row2 = new LinkedList<>();
+        row2.add(kazButton);
+        row2.add(uzbButton);
+
+        List<InlineKeyboardButton> row3 = new LinkedList<>();
+        row3.add(chiButton);
+        row3.add(turButton);
         //ROW COLLECTION
         List<List<InlineKeyboardButton>> rowCollection = new LinkedList<>();
         rowCollection.add(row);
         rowCollection.add(row1);
+        rowCollection.add(row2);
+        rowCollection.add(row3);
         //keyboard
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.setKeyboard(rowCollection);
-
         //
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
     }

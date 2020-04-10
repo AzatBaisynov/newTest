@@ -55,10 +55,8 @@ public class HtmlReader {
         }
         return articles;
     }
-
-
-    public static Article getKyrgyzOfficialTable() {
-        List<String> list = Changer.kyrgyzstanList();
+    public static Article getCountryOfficialTable(String country, String region){
+        List<String> list = Changer.getOneCountryList(country, region);
         Article article = new Article(
                 list.get(0),
                 list.get(1),
@@ -70,9 +68,10 @@ public class HtmlReader {
         );
         return article;
     }
+
 
     public static Article getRussiaOfficialTable() {
-        List<String> list = Changer.russiaList();
+        List<String> list = Changer.getOneCountryList("Russia", "Europe");
         Article article = new Article(
                 list.get(0),
                 list.get(1),
@@ -85,6 +84,61 @@ public class HtmlReader {
         return article;
     }
 
+    public static Article getKazakhstanOfficialTable() {
+        List<String> list = Changer.getOneCountryList("Kazakhstan", "Asia");
+        Article article = new Article(
+                list.get(0),
+                list.get(1),
+                checkForNull(list.get(2)),
+                list.get(3),
+                checkForNull(list.get(4)),
+                list.get(5),
+                list.get(6)
+        );
+        return article;
+    }
+
+    public static Article getUzbekistanOfficialTable() {
+        List<String> list = Changer.getOneCountryList("Uzbekistan", "Asia");
+        Article article = new Article(
+                list.get(0),
+                list.get(1),
+                checkForNull(list.get(2)),
+                list.get(3),
+                checkForNull(list.get(4)),
+                list.get(5),
+                list.get(6)
+        );
+        return article;
+    }
+
+    public static Article getTurkeyOfficialTable() {
+        List<String> list = Changer.getOneCountryList("Turkey", "Asia");
+        Article article = new Article(
+                list.get(0),
+                list.get(1),
+                checkForNull(list.get(2)),
+                list.get(3),
+                checkForNull(list.get(4)),
+                list.get(5),
+                list.get(6)
+        );
+        return article;
+    }
+
+    public static Article getChinaOfficialTable() {
+        List<String> list = Changer.getOneCountryList("China", "Asia");
+        Article article = new Article(
+                list.get(0),
+                list.get(1),
+                checkForNull(list.get(2)),
+                list.get(3),
+                checkForNull(list.get(4)),
+                list.get(5),
+                list.get(6)
+        );
+        return article;
+    }
 
 
     public static String checkForNull(String str){
