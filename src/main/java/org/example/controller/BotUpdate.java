@@ -7,10 +7,11 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.example.repo.Article;
 import org.telegram.telegrambots.meta.api.objects.User;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class BotUpdate {
-    public static void runUpdate(Update update){
+    public static void runUpdate(Update update) throws FileNotFoundException {
         Bot bot = new Bot();
         if(update.hasCallbackQuery()){
 
@@ -24,7 +25,7 @@ public class BotUpdate {
                     bot.sendMsgNoReplyNoButton(message1, "Вывожу статистику:");
                     List<Article> list = HtmlReader.getOfficialTable();
                     for(int i = 0; i < 10; i++) {
-                        bot.sendMsgNoReplyNoButton(message1,list.get(i).toString());
+                        bot.sendMsgNoReplyNoButtonTop10(message1,list.get(i).toString());
                     }
                     bot.sendMsgNoReply(message1, "\u2063                                Меню                 \u2063");
                     break;

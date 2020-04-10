@@ -29,12 +29,12 @@ public class BotButtons {
         InlineKeyboardButton uzbButton = new InlineKeyboardButton();
         uzbButton.setText("  Узбекистан  ");
         uzbButton.setCallbackData("/uzbekistan");
-        InlineKeyboardButton chiButton = new InlineKeyboardButton();
-        chiButton.setText("  Китай  ");
-        chiButton.setCallbackData("/china");
-        InlineKeyboardButton turButton = new InlineKeyboardButton();
-        turButton.setText("  Турция  ");
-        turButton.setCallbackData("/turkey");
+//        InlineKeyboardButton chiButton = new InlineKeyboardButton();
+//        chiButton.setText("  Китай  ");
+//        chiButton.setCallbackData("/china");
+//        InlineKeyboardButton turButton = new InlineKeyboardButton();
+//        turButton.setText("  Турция  ");
+//        turButton.setCallbackData("/turkey");
         //
         //row
         List<InlineKeyboardButton> row = new LinkedList<>();
@@ -45,15 +45,15 @@ public class BotButtons {
         List<InlineKeyboardButton> row2 = new LinkedList<>();
         row2.add(kazButton);
         row2.add(uzbButton);
-        List<InlineKeyboardButton> row3 = new LinkedList<>();
-        row3.add(chiButton);
-        row3.add(turButton);
+//        List<InlineKeyboardButton> row3 = new LinkedList<>();
+//        row3.add(chiButton);
+//        row3.add(turButton);
         //ROW COLLECTION
         List<List<InlineKeyboardButton>> rowCollection = new LinkedList<>();
         rowCollection.add(row);
         rowCollection.add(row1);
         rowCollection.add(row2);
-        rowCollection.add(row3);
+//        rowCollection.add(row3);
         //keyboard
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.setKeyboard(rowCollection);
